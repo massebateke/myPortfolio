@@ -3,8 +3,9 @@
 
 body{
     background-image:url(./assets/blur.png);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 3500px;
+    // object-fit: fill;
 }
 
   .contenu {
@@ -37,7 +38,7 @@ body{
   
 
     nav {
-    padding: 10px 0; 
+    padding: 15px 0; 
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -59,10 +60,10 @@ body{
     padding: 20px;
 
     .logo a {
-        color: #333;
-        font-weight: bold;
+      color: #1c1c1c;
+      font-weight: bold;
         text-decoration: none;
-        font-size: 1.2em;
+        font-size: 1.5em;
       }
     
    
@@ -76,16 +77,18 @@ body{
     padding: 0;
     justify-content: center;
     flex: 1;
-    color: #333; 
+    // color: #333; 
   
         li {
             margin: 0 10px;
         }
 
       a {
-        color: #333;
+        color: #1c1c1c;
+        // font-stretch: 200%;
         text-decoration: none;
         font-weight: bold;
+        font-size: 1.5em;
         padding: 10px 15px;
         transition: color 0.3s;
         font-family: 'Bebas Neue', sans-serif;
@@ -99,11 +102,11 @@ body{
   
   .download-btn{
     border: none;
-    color: #333;
+    color: #1c1c1c;
     background-color: #5f0efb;;
     font-family: 'Bebas Neue', sans-serif;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.5em;
   }
 
 .acceuil{
@@ -131,6 +134,17 @@ body{
     gap: 8em;
   
 }
+
+.moi2{
+  background-color: #5f0efb;
+  padding: 0.5em;
+}
+
+.purple{
+  background-color: #5f0efb;
+  font-weight: lighter;
+}
+
 .containerAPropos{
   gap: 1.5em;
   display: flex;
@@ -139,10 +153,12 @@ body{
 .AProposTitre , .competencesTitre ,.projetTitre ,.contact ,.formationTitre{
     margin-bottom: 3em;
     font-family: 'Bebas Neue', sans-serif;
+    margin-left: 1.9em;
 }
 
 .moiTitre{
   font-family: 'Bebas Neue', sans-serif;
+  margin-left: 1em;
 
 }
 
@@ -359,6 +375,10 @@ textarea {
   padding: 10px;
 }
 
+.logo a{
+  display: none;
+
+}
 }
 
 
@@ -368,10 +388,24 @@ textarea {
     width: 100%;
     padding: 20px;
     justify-content: space-between;
+
+
+     .logo a{
+      // font-size: 0.7em;
+      display: none;
+     }
+  }
+
+  .download-btn{
+    font-size: 1em;
   }
 
   .nav-links li {
     margin: 0;
+
+    a{
+      font-size: 1em;
+    }
   }
   header {
     font-size: 1em;
@@ -453,15 +487,24 @@ textarea {
       align-items: center;
   }
 
-  .containerAPropos, .containerFormation, .containerCompetences, .containerProjet {
+  .containerAPropos, .containerFormation, .containerProjet {
       flex-direction: column;
       align-items: center;
   }
 
-  .APropos, .formation, .competences, .projet {
+  .APropos, .formation,  .projet {
       width: 90%;
+      // display: contents;
   }
 
+  .competences{
+    width: 25%;
+  }
+  
+  .containerCompetences{
+    display: flex;
+    flex-wrap: wrap;
+  }
   .projetimg img {
       width: 80%;
   }
@@ -480,7 +523,9 @@ textarea {
   .moi img {
     width: 200px;
     position: relative;
-    top: 1.3em;
+    top: 4em;
+    margin: auto;
+    display: block;
 
 }
 .AProposTitre{
@@ -489,63 +534,195 @@ textarea {
 
 }
 
-@media (max-width: 480px) {
-  header {
-      font-size: 0.8em;
+@media (min-width:376px) and (max-width: 480px) {
+
+
+  .moi img{
+    margin-left: 3em;
+    bottom: 2em;
+  }
+    .AProposTitre h1{
+
+      position: relative;
+      top: 4em;
   }
 
-  .logo a {
-      font-size: 1.1em;
+    .nav {
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+    .nav-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.nav-container .logo a {
+  display: none;
+}
+
+  .moii{
+    display: contents;
   }
 
-  .nav-container {
-      width: 100%;
-      padding: 10px;
+  .moi p{
+    font-size: 1em;
   }
 
-  .nav-links {
-      flex-direction: column;
-      padding: 0;
-      margin: 0;
+  .containerAPropos, .containerFormation{
+    display: inline;
   }
 
-  .APropos, .formation,.projet {
-      padding: 1em;
+  .APropos , .formation{
+    max-width: 350px;
+    margin-bottom:1em ;
 
   }
 
-  .containerAPropos, .containerFormation, .containerCompetences, .containerProjet {
-      gap: 1em;
+  .containerCompetences{
+    flex-wrap: wrap;
+    gap: 0.5em;
+    display: flex;
+  }
+  .emailForm{
+    width: 70%;
   }
 
-  .projettt img {
-      width: 90px;
-      height: 90px;
+  .containerProjet{
+    display: inline;
   }
-
+  .projet{
+  margin-bottom:1em ;
+  }
+  .projett{
+    display: inline;
+  }
+  .projetimg img{
+    width: 18em;
+  }
   .footer__links {
-      flex-direction: column;
-      align-items: center;
+    gap: 0.3em;
+    justify-content:normal;
   }
+  .footer__links a{
+    font-size: 0.7em;
+  }
+
+  .nav-container{
+    width: 20px;
+    .logo a {
+      font-size: smaller;
+    }
+  }
+
+  .nav-links a {
+    font-size: smaller;
+  }
+
+}
+
+@media (max-width:376px) {
+
+   .moi img{
+    bottom: 2em;
+  }
+    .AProposTitre h1{
+
+      position: relative;
+      top: 4em;
+  }
+
+  .moii{
+    display: contents;
+  }
+
+  .competences {
+    background-color: rgba(164, 169, 182, 0.2156862745);
+    border-radius: 1em;
+    width: 8em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.containerCompetences {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+.containerProjet{
+  display: inline;
+  margin-bottom: 2em;
+}
+
+.projettt{
+  display: none;
+}
+
+.projetimg img
+ {
+    width: 340px;
+    height: 220px;
+    margin: 0;
+ }
 
   .emailForm {
-      width: 90%;
+  width: 75%;
   }
 
-  .moi {
-      flex-direction: column;
-      p{
-        font-size: 1em;
-      }
-  }
+.projet{
+    background-color: rgba(164, 169, 182, 0.2156862745);
+    border-radius: 1em;
+    padding: 0.8em;
+    margin-bottom: 2em;}
 
-  .moi img {
-      width: 200px;
-      position: relative;
-      top: 1.3em;
-
-  }
-  .AProposTitre{
+    .footer li{
     display: none;
+    }
+
+.nav {
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+    .nav-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.nav-container .logo a {
+  display: none;
+}
+
+ .nav-container{
+    width: 20px;
+    .logo a {
+      font-size: smaller;
+    }
+  }
+
+  .nav-links a {
+    font-size: smaller;
   }
 }
